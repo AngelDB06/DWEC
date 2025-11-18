@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Cliente {
+            constructor(nif, nombre, direccion, tlf, email) {
+                this.nif = nif;
+                this.nombre = nombre;
+                this.direccion = direccion;
+                this.tlf = tlf;
+                this.email = email;
+            }
+        }
+
+        class Articulo {
+            constructor(cod, nombre, precio) {
+                this.cod = cod;
+                this.nombre = nombre;
+                this.precio = precio;
+            }
+
+            getPVP() {
+                return this.precio * 1.21; // Price including 21% VAT
+            }
+        }
+
+        class Albaran {
+            constructor(cli, numero, fecha, lineas) {
+                this.cli = cli;
+                this.numero = numero;
+                this.fecha = fecha;
+                this.lineas = lineas;
+            }
+
+            show() {
+                return "Cliente: " + this.cli.nombre +
+                    " Nº albaran: " + this.numero +
+                    " Fecha: " + this.fecha +
+                    " Lineas: " + this.lineas.map(art => art.nombre).join(", ");
+            }
+
+            addArticulo(articulo) {
+                this.lineas.push(articulo);
+            }
+
+            getTotal() {
+                let total = 0;
+                this.lineas.forEach(articulo => {
+                    total += articulo.getPVP();
+                });
+                return total;
+            }
+        }
+
+
+        let cli1 = new Cliente("12345678Z", "Pepe Domingo", "Calle Alameda 4", 699928170, "ejemplo@gmail.com");
+        let art1 = new Articulo(1, "Sartén", 10);
+        let art2 = new Articulo(2, "Olla", 10);
+        let art3 = new Articulo(3, "Balón", 20);
+
+        let alb1 = new Albaran(cli1, 2, "17/10/2025", [art1, art2]);
+        let alb2 = new Albaran(cli1, 3, "17/10/2025", [art3]);
+
+        console.log(alb2.getTotal());
+        console.log(alb2.show());
+    </script>
+
+</body>
+
+</html>

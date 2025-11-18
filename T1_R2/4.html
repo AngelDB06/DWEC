@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ncolumnas = prompt("¿Cuántas columnas quieres?")
+        let alto = prompt("¿Cuántos pixels de alto te gustaría que tuviesen?")
+        let ancho = prompt("¿Cuántos pixels de ancho te gustaría que tuviesen?")
+        let contador = 0;
+        
+        document.write(`
+                        <table border="0" cellspacing="2" bgcolor="black" width=${ancho*ncolumnas}>
+                            <tr bgcolor= "white" height="${alto}">`)
+        while (contador!=ncolumnas) {
+            document.write(`<td width="${ancho}">&nbsp;</td>`)
+            contador++
+        }
+        document.write(`</tr>
+                        </table`)
+    </script>
+</body>
+</html>

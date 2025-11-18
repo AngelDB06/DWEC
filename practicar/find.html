@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arAlumnos = [{Nombre: "Diana", nota: 8},{Nombre: "Lucas", nota: 4},{Nombre: "Cristina", nota: 9}]
+        function localiza(arg) {
+            if (arg.nota<5) {
+                return arg.Nombre
+            }
+        }
+        let alumno = arAlumnos.find(localiza);
+        document.write(alumno.Nombre)
+
+        function encuentra(array, fLocaliza) {
+            for (let i = 0; i < array.length; i++) {
+                if (fLocaliza(array[i])) {
+                    return array[i];
+                }
+            }
+        }
+
+        alumnos2 = arAlumnos.encuentra(localiza)
+        document.write(alumnos2.Nombre)
+        
+    </script>
+</body>
+</html>

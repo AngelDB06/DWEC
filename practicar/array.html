@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeros = [1,5,4,11,7];
+        
+        numeros.sort(function ordena(n1, n2) {
+            if (n1>n2) {
+                return 1;
+            } else if (n1<n2) {
+                return -1;
+            } else {
+                return 0;
+            }
+        })
+
+        document.write(numeros);
+    </script>
+</body>
+</html>

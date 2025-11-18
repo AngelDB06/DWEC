@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+while (true) {
+  let respuesta = prompt("¿Cuál fue el primer presidente de la democracia española?");
+  
+  if (!respuesta) continue;
+
+  respuesta = respuesta.trim().toLowerCase();
+
+  if (respuesta === "adolfo suárez" || respuesta === "adolfo suarez") {
+    alert("¡Correcto! Fue Adolfo Suárez.");
+    break;
+  } else if (respuesta === "adolfo") {
+    alert("Te falta el apellido. ¿Cuál fue el primer presidente de la democracia española?");
+  } else if (respuesta === "suárez" || respuesta === "suarez") {
+    alert("Te falta el nombre. ¿Cuál fue el primer presidente de la democracia española?");
+  } else {
+    alert("ERROR. Inténtelo de nuevo. ¿Cuál fue el primer presidente de la democracia española?");
+  }
+}
+
+    </script>
+</body>
+</html>

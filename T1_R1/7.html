@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var apellidoCorrecto = "suárez"; 
+    var apellidoUsuario;
+
+    var accesoPermitido = false; 
+
+    while (!accesoPermitido) {
+        apellidoUsuario = prompt("Esta página tiene control parental.\nPor favor, introduce el apellido del primer presidente español de la democracia:");
+
+        if (apellidoUsuario.toLowerCase() === apellidoCorrecto) {
+            accesoPermitido = true;
+        } else {
+            alert("Respuesta incorrecta. Inténtalo de nuevo.");
+        }
+    }
+</script>
+</body>
+</html>

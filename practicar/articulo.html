@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const articulo = [{
+            codigo: 1,
+            nombre: "Cazerola",
+            precio: 30,
+            muestrahtml: function () {
+                return "Código: ", this.codigo + " Nombre:" + this.nombre + " Precio:" + this.precio;
+            },
+            pvpiva: function () {
+                return this.precio * 1.21;
+            },
+            dto: function (n) {
+                return this.precio - (this.precio * n);
+            }
+        }, {
+            codigo: 2,
+            nombre: "Sartén",
+            precio: 20,
+            muestrahtml: function () {
+                return "Código: ", this.codigo + " Nombre:" + this.nombre + " Precio:" + this.precio;
+            },
+            pvpiva: function () {
+                return this.precio * 1.21;
+            },
+            dto: function (n) {
+                return this.precio - (this.precio * n);
+            }
+        }, {
+            codigo: 3,
+            nombre: "Libro",
+            precio: 22,
+            muestrahtml: function () {
+                return "Código: ", this.codigo + " Nombre:" + this.nombre + " Precio:" + this.precio;
+            },
+            pvpiva: function () {
+                return this.precio * 1.21;
+            },
+            dto: function (n) {
+                return this.precio - (this.precio * n);
+            }
+        }, {
+            codigo: 4,
+            nombre: "Videojuego",
+            precio: 50,
+            muestrahtml: function () {
+                return "Código: ", this.codigo + " Nombre:" + this.nombre + " Precio:" + this.precio;
+            },
+            pvpiva: function () {
+                return this.precio * 1.21;
+            },
+            dto: function (n) {
+                return this.precio - (this.precio * n);
+            }
+        }, {
+            codigo: 5,
+            nombre: "Pendrive",
+            precio: 10,
+            muestrahtml: function () {
+                return "Código: ", this.codigo + " Nombre:" + this.nombre + " Precio:" + this.precio;
+            },
+            pvpiva: function () {
+                return this.precio * 1.21;
+            },
+            dto: function (n) {
+                return this.precio - (this.precio * (n / 100));
+            }
+        }];
+
+        const funciones = {
+            encuentra: function (cod) {
+                for (let i = 0; i < articulo.length; i++) {
+                    if (articulo[i].codigo == cod) {
+                        return articulo[i];
+                    }
+
+                }
+            },
+            ordenaPrecio: function (art) {
+                art.sort((ob1,ob2) => ob1.precio-ob2.precio);
+            }
+        }
+
+
+
+        document.write(articulo[2].muestrahtml(), "<br>");
+        document.write(articulo[0].pvpiva(), "<br>");
+        document.write(articulo[4].dto(10), "<br>")
+        document.write(funciones.encuentra(1).muestrahtml());
+
+    </script>
+</body>
+
+</html>

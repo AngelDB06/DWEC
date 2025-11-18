@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Introduce un número:")
+        let n2 = prompt("Adivina el número del jugador 1:")
+        while (n2!=n) {
+            if (n2>n) {
+                n2=prompt("ERROR. Inténtalo otra vez (El número es menor):")
+            } else {
+                n2=prompt("ERROR. Inténtalo de nuevo (El número es mayor)")
+            }
+        }
+        document.write(`¡Enhorabuena! El número era el ${n}`)
+    </script>
+</body>
+</html>

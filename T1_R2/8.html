@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let anchoalto = prompt("Introduce el ancho y alto del tablero de ajedrez")
+
+        document.write(`
+                        <table border="0" cellspacing="2" bgcolor="black">
+                            `)
+        
+        for (let filas = 0; filas < 8; filas++) {
+            document.write(`<tr bgcolor= "white" height="${anchoalto}">`)
+            if (filas%2==0) {
+                for (let columnas = 0; columnas < 8; columnas++) {
+                    if (columnas%2==0) {
+                document.write(`<td width="${anchoalto}" bgcolor="black">&nbsp;</td>`)
+            } else {
+                document.write(`<td width="${anchoalto}" bgcolor="white">&nbsp;</td>`)
+            }
+            }
+            } else {
+                for (let columnas = 0; columnas < 8; columnas++) {
+                    if (columnas%2==0) {
+                document.write(`<td width="${anchoalto}" bgcolor="white">&nbsp;</td>`)
+            } else {
+                document.write(`<td width="${anchoalto}" bgcolor="black">&nbsp;</td>`)
+            }
+            
+            }
+            } 
+            document.write(`</tr>`)
+        }
+        document.write(`</table>`)
+    </script>
+</body>
+</html>

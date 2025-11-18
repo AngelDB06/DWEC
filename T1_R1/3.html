@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const edad = parseInt(prompt("Introduce una edad:"))
+        let mensaje= undefined;
+        if (edad>=8 && edad<=9) {
+            mensaje = "Benjamín"
+        } else if (edad>=10 && edad<=11) {
+            mensaje = "Alevín"
+        } else if (edad>=12 && edad<=13) {
+            mensaje = "Infantil"
+        } else if (edad>=14 && edad<=15) {
+            mensaje = "Cadete"
+        } else if (edad>=16 && edad<=18) {
+            mensaje = "Juvenil"
+        } else if (edad>18) {
+            mensaje = "Absoluto"
+        } else {
+            mensaje = "Introduzca una edad de los 8 años en adelante."
+        }
+        document.write(mensaje)
+    </script>
+</body>
+</html>
