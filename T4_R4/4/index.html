@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdrise Sign-Up Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="illustration-placeholder">
+                </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="menu-icon"></div> <div class="form-content">
+                <header>
+                    <h2>Welcome to Crowdrise</h2>
+                    <p>Let's get you all set up so you can verify your nonprofit and begin setting up your first campaign!</p>
+                </header>
+
+                <p class="login-link">Already have an account? <a href="#">Log in.</a></p>
+
+                <form class="sign-up-form">
+                    <div class="form-row">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" placeholder="Peter">
+                    </div>
+                    <div class="form-row">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" placeholder="Deltando">
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" placeholder="949-867-5309">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="pdeltando@crowdrise.com">
+                    </div>
+                    <div class="form-row">
+                        <label for="password">Password</label>
+                        <input type="password" id="password">
+                    </div>
+                    <div class="form-row">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="receive-emails" checked>
+                        <label for="receive-emails">Yes, I want to receive Crowdrise's emails</label>
+                    </div>
+
+                    <div class="checkbox-group agreement">
+                        <input type="checkbox" id="agree-terms" checked>
+                        <label for="agree-terms">I agree to the <a href="#">Terms, Privacy Policy</a> and <a href="#">Fees</a>.</label>
+                    </div>
+
+                    <button type="submit" class="sign-up-button">Sign Up</button>
+                </form>
+
+                <p class="nonprofit-link">Don't work for a nonprofit? <a href="#">You can still fundraise for one.</a></p>
+                <div class="language-selector">English <span class="arrow">▼</span></div>
+            </div>
+        </div>
+    </div>
+        <script type="module" src="main.js"></script>
+
+</body>
+</html>

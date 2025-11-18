@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación en tiempo real</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #e57373; 
+            font-family: Arial;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 10px;
+            width: 350px;
+            color: #fff;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #ffe0e0;
+            background: transparent;
+            outline: none;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: disc;
+            text-align: left;
+            margin-left: 70px;
+            font-size: 14px;
+        }
+
+        li {
+            color: #ffd0d0;
+            margin: 5px 0;
+        }
+
+        .valid {
+            color: #c8ffb0 !important;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #ffb3b3;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        button.enabled {
+            opacity: 1;
+            background: #ff8a80;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h3>username</h3>
+
+    <input type="text" id="username" placeholder="Escribe tu usuario">
+
+    <ul>
+        <li id="lower">1 lowercase character</li>
+        <li id="upper">1 uppercase character</li>
+        <li id="len">6 minimum characters</li>
+    </ul>
+
+    <button id="submit" disabled>Submit</button>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

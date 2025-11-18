@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [5, 12, 7, 3, 9, 21, 18];
+        const strings = ["apple", "banana", "kiwi", "strawberry", "island", "this", "history"];
+
+        const largest = numbers.reduce((max, num) => num > max ? num : max);
+        console.log("Largest number:", largest); // → 21
+
+        const longest = strings.reduce((longest, str) => str.length > longest.length ? str : longest);
+        console.log("Longest string:", longest); // → "strawberry"
+
+        const evens = numbers.filter(num => num % 2 === 0);
+        console.log("Even numbers:", evens); 
+
+        const odds = numbers.filter(num => num % 2 !== 0);
+        console.log("Odd numbers:", odds); 
+
+
+        const withIs = strings.filter(word => word.includes('is'));
+        console.log("Words containing 'is':", withIs); 
+
+        const allDivisibleByThree = numbers.every(num => num % 3 === 0);
+        console.log("All divisible by 3?", allDivisibleByThree); 
+
+
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+        const zipped = numbers.map((num, i) => [num, letters[i]]);
+        console.log("Zipped arrays:", zipped);
+
+
+
+        const otherNumbers = [2, 14, 8];
+        const joinedSorted = numbers.concat(otherNumbers).sort((a, b) => a - b);
+        console.log("Joined and sorted:", joinedSorted);
+
+        const words = ["first", "second", "third", "fourth"];
+        words.shift();
+        console.log("After removing first:", words); 
+
+        words.unshift("zero");
+        console.log("After adding at start:", words); 
+        
+        words.splice(2, 2, "newOne", "newTwo");
+        console.log("After replacing elements:", words);
+
+    </script>
+</body>
+
+</html>

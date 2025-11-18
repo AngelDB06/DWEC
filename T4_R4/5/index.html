@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Tarjeta de Crédito 3D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="background-container">
+        <div class="card-form-wrapper">
+
+            <div class="card-container">
+                <div class="card-item -front">
+                    <div class="chip"></div>
+                    <div class="logo">VISA</div>
+                    <div class="number" id="cardNumberDisplay">#### #### #### ####</div>
+                    <div class="card-bottom">
+                        <div class="card-holder">
+                            <span class="label">FULL NAME</span>
+                            <div class="name" id="cardHolderDisplay">Carol Holders</div>
+                        </div>
+                        <div class="card-expires">
+                            <span class="label">Expires</span>
+                            <div class="date" id="cardExpiryDisplay">MM/YY</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-item -back">
+                    <div class="stripe"></div>
+                    <div class="cvv-section">
+                        <span class="cvv-label">CVV</span>
+                        <div class="cvv-line" id="cardCvvDisplay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form-container">
+                <div class="input-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
+                </div>
+
+                <div class="input-group">
+                    <label for="cardHolder">Card Holders</label>
+                    <input type="text" id="cardHolder" placeholder="Full Name">
+                </div>
+
+                <div class="expiration-cvv-group">
+                    <div class="input-group expiration-date">
+                        <label>Expiration Date</label>
+                        <div class="date-selects">
+                            <select name="cardMonth" id="cardMonth">
+                                <option value="" disabled selected>Month</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select name="cardYear" id="cardYear">
+                                <option value="" disabled selected>Year</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group cvv-input">
+                        <label for="cardCvv">CVV</label>
+                        <input type="text" id="cardCvv" maxlength="4">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>

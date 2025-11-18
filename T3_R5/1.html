@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const sum = (num1, num2) => num1 + num2;
+
+console.log(sum(40, 2));
+console.log(sum(42, 0));
+
+const stringLength = str => {
+  console.log(`The length of "${str}" is:`, str.length);
+  return str.length;
+};
+
+let longestCityNameInTheWorld = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu";
+
+stringLength(longestCityNameInTheWorld);
+stringLength("willynilly");
+
+let alerts = [
+  "Hey, you are awesome",
+  "You are so wonderful",
+  "What a marvel you are",
+  "You're so lovely",
+  "You're so sweet that I'd think you're a sweet potato -- and I LOOOOVE POTATOES"
+];
+
+
+const showAlert = name => {
+  alert(alerts[Math.floor(Math.random() * alerts.length)] + `, ${name}!`);
+};
+    </script>
+</body>
+</html>
