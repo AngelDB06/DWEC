@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hemos cambiado de ubicación esta página</h1>
+    <p>Será redirigido en:</p>
+    <p id="count">5</p>
+    <script>
+        let sec=5;
+        const contador = setInterval(() =>{
+            
+            sec --;
+            document.getElementById("count").innerHTML=sec;
+
+            if (sec==0) {
+                clearInterval(contador);
+                window.location.replace("http://www.pccomponentes.com")
+            }
+        }, 1000)
+    </script>
+</body>
+</html>

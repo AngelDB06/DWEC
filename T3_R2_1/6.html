@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de búsqueda de texto</h1>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus facilisis sapien a sapien feugiat, non viverra nisi efficitur.</p>
+  <p>En esta página podrás buscar una palabra dentro de los párrafos utilizando JavaScript.</p>
+  <p>El lenguaje JavaScript permite interactuar con el contenido del documento HTML de manera muy sencilla.</p>
+
+  <button onclick="buscarPalabra()">Buscar palabra</button>
+
+  <script>
+    function buscarPalabra() {
+      const palabra = prompt("Introduce la palabra o texto que quieres buscar:");
+
+      if (!palabra) {
+        alert("No introdujiste ninguna palabra.");
+        return;
+      }
+
+      const textoCompleto = document.body.innerText.toLowerCase();
+      const existe = textoCompleto.includes(palabra.toLowerCase());
+
+      if (existe) {
+        alert(`La palabra "${palabra}" SÍ se encuentra en el documento.`);
+      } else {
+        alert(`La palabra "${palabra}" NO se encuentra en el documento.`);
+      }
+    }
+  </script>
+
+</body>
+</html>

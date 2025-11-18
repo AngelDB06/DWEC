@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="document.write(lanzamiento())">Lanza el dado</button>
+    <button onclick="document.write(tiradas6000())">Tira 6000 veces</button>
+    <script>
+        function lanzamiento() {
+            return Math.floor(Math.random() *6)+1;
+        }
+        function tiradas6000() {
+            for (let i = 0; i < 6000; i++) {
+                document.write(Math.floor(Math.random() *6)+1, "<br>");
+            }
+        }
+    </script>
+</body>
+</html>

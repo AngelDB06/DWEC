@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let inicio = new Date();
+
+        let nombre = prompt("Introduce tu nombre completo: ");
+
+        let final = new Date();
+
+        let tiempo = Math.round((final-inicio)/1000);
+        
+        document.write("Has tardado ", tiempo, " segundos en introducir ", nombre);
+    </script>
+</body>
+</html>

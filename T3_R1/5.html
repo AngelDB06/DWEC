@@ -1,0 +1,27 @@
+<!DO<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let esfera = prompt("Introduce el radio para el volumen de la esfera: ")
+        let circulo = prompt("Introduce el radio para el volumen de la esfera: ")
+
+        function volumen(r) {
+            return Math.floor((4/3) * Math.PI * Math.pow(r,3));
+        }
+
+        function area(r) {
+            return Math.floor(Math.PI*Math.pow(r,2));
+        }
+
+        document.write(volumen(esfera), "m3<br>");
+        document.write(area(circulo), "m2");
+
+
+    </script>
+</body>
+</html>

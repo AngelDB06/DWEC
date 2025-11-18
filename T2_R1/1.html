@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hoy = new Date();
+        let añoactual = hoy.getFullYear();
+
+        let vacaciones = new Date(añoactual, 11, 19);
+
+        if (hoy>vacaciones) {
+            vacaciones = new Date(añoactual+1, 11, 19)
+        }
+
+        let msDay = 1000*60*60*24;
+        const diasRest=Math.floor((vacaciones-hoy)/(msDay));
+
+        document.write(diasRest);
+    </script>
+</body>
+</html>

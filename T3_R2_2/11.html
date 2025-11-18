@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="tabla"></div>
+    <script>
+
+        const estadillos = [
+            [1, 1, 100],
+            [2, 1, 150],
+            [1, 2, 200],
+            [3, 3, 50],
+            [4, 5, 300],
+            [2, 3, 120],
+            [1, 1, 50], 
+            [4, 2, 100],
+            [3, 5, 80],
+            [2, 5, 200]
+
+        ];
+
+
+        const filas = 5;  
+        const columnas = 4; 
+        let ventas = Array(filas).fill(0).map(() => Array(columnas).fill(0));
+
+
+        estadillos.forEach(([vendedor, producto, valor]) => {
+            ventas[producto - 1][vendedor - 1] += valor;
+        });
+
+
+        let tabla = '<table>';
+
+
+        tabla += '<tr><th>Producto</th>';
+        for (let j = 1; j <= columnas; j++) {
+            tabla += `<th>Vendedor ${j}</th>`;
+        }
+        tabla += '<th>Total Producto</th></tr>';
+
+
+        for (let i = 0; i < filas; i++) {
+            tabla += `<tr><td>Producto ${i + 1}</td>`;
+            let totalProducto = 0;
+            for (let j = 0; j < columnas; j++) {
+                tabla += `<td>${ventas[i][j]}</td>`;
+                totalProducto += ventas[i][j];
+            }
+            tabla += `<td class="total">${totalProducto}</td></tr>`;
+        }
+
+
+        tabla += '<tr><td>Total Vendedor</td>';
+        let totalGeneral = 0;
+        for (let j = 0; j < columnas; j++) {
+            let totalVendedor = 0;
+            for (let i = 0; i < filas; i++) {
+                totalVendedor += ventas[i][j];
+            }
+            tabla += `<td class="total">${totalVendedor}</td>`;
+            totalGeneral += totalVendedor;
+        }
+        tabla += `<td class="total">${totalGeneral}</td></tr>`;
+
+        tabla += '</table>';
+
+        document.getElementById('tabla').innerHTML = tabla;
+    </script>
+</body>
+
+</html>

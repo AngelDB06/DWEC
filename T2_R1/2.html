@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    let input = prompt("Introduce tu cumpleaños en formato YYYY-MM-DD:");
+
+    if (input) {
+      let partes = input.split("-"); 
+      let year = parseInt(partes[0]);
+      let month = parseInt(partes[1]);
+      let day = parseInt(partes[2]);
+
+      document.write("Años en los que tu cumpleaños cae en domingo:<br>");
+
+      for (let y = year; y <= 2100; y++) {
+        let fecha = new Date(y, month - 1, day);
+        if (fecha.getDay() === 0) {
+          document.write(y,"<br>");
+        }
+      }
+    } else {
+      document.write("No introdujiste una fecha válida.");
+    }
+  </script>
+</body>
+</html>

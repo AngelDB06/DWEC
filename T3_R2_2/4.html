@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const alumnos = [
+            "Angel Garcia, 20, 6, 7, 10",
+            "Enrique Fernández, 21, 8, 9, 7",
+            "Mario Moreno, 19, 7, 8, 10"
+        ]
+        
+        function aleatorio() {
+            return Math.floor(Math.random() * alumnos.length);
+        }
+
+
+        function mostrarEstudiante(nestudiante){
+            nombre = alumnos[nestudiante].split(", ");
+            return nombre[0]
+        }
+        
+        document.write(mostrarEstudiante(aleatorio()))
+    </script>
+</body>
+</html>

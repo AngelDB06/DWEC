@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let nombre = prompt("Introduce tu nombre:");
+    let apellido1 = prompt("Introduce tu primer apellido:");
+    let apellido2 = prompt("Introduce tu segundo apellido:");
+
+    let tamañoTotal = nombre.length + apellido1.length + apellido2.length;
+    document.write("Tamaño total del nombre y apellidos: " + tamañoTotal + "<br>");
+
+    let cadenaCompleta = nombre + " " + apellido1 + " " + apellido2;
+    document.write("En minúsculas: " + cadenaCompleta.toLowerCase() + "<br>");
+    document.write("En mayúsculas: " + cadenaCompleta.toUpperCase() + "<br>");
+
+    document.write("Nombre: " + nombre + "<br>");
+    document.write("Apellido 1: " + apellido1 + "<br>");
+    document.write("Apellido 2: " + apellido2 + "<br>");
+  </script>
+</body>
+</html>

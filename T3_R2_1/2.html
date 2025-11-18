@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arC=["azul", "amarillo", "rojo", "verde", "café", "rosa"];
+
+        let color=prompt("Introduce un color: ");
+        let esta=false;
+
+        for (let i = 0; i < arC.length; i++) {
+            
+            if (color==arC[i]) {
+                esta=true;
+                break;
+            }
+        }
+        if (esta==true) {
+            document.write("El color introducido se encuentra en el array")
+        } else {
+            document.write("El color introducido no se encuentra en el array")
+        }
+    </script>
+</body>
+</html>

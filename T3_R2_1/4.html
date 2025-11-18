@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array1=["Real Madrid", "España", "Betis", "Getafe", "Granada"];
+        let array2=["Barcelona", "Italia", "Sevilla", "Valencia", "Mallorca"];
+
+
+        let interseccion=array1.filter(elemento => array2.includes(elemento));
+
+        let union = [...new Set([...array1, ...array2])];
+
+        let diferencia=array2.filter(elemento => !array2.includes(elemento));
+
+
+        document.write("<p>Array 1: " + array1.join(", ") + "</p>");
+        document.write("<p>Array 2: " + array2.join(", ") + "</p>");
+        document.write("<p><strong>Intersección:</strong> " + interseccion.join(", ") + "</p>");
+        document.write("<p><strong>Unión:</strong> " + union.join(", ") + "</p>");
+        document.write("<p><strong>Diferencia:</strong> " + diferencia.join(", ") + "</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        nombre = prompt("Introduce el nombre del vendedor: ");
+        ventas = prompt("Introduce el dinero que ha conseguido el vendedor este mes: ");
+
+        sueldo = sueldoVendedor(ventas);
+        function sueldoVendedor(n) {
+            return 200+(n*0.09);
+        }
+
+        document.write(nombre, " ha vendido: ", ventas, " su sueldo es de: ", sueldo);
+
+    </script>
+</body>
+</html>

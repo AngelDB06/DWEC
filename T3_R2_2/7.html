@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function inicializarArray() {
+      let arr = new Array(10).fill(0);
+      return arr;
+    }
+
+    function incrementarArray(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] += 1;
+      }
+      return arr;
+    }
+
+    function mostrarArray(arr) {
+      document.write(arr.join(" ") + "<br>");
+    }
+
+    let numeros = inicializarArray();
+    document.write("Array inicializado a cero:<br>");
+    mostrarArray(numeros);
+
+    numeros = incrementarArray(numeros);
+    document.write("Array tras incrementar en 1 cada elemento:<br>");
+    mostrarArray(numeros);
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let op = Number(prompt("Introduce una opción:\n1. Potencia\n2. Raíz\n3. Redondeo\n4. Trigonometría"));
+
+    switch (op) {
+      case 1:
+        let x = Number(prompt("Introduce un número que quieras elevar:"));
+        let y = Number(prompt("Introduce el exponente:"));
+        document.write("Resultado: " + Math.pow(x, y));
+        break;
+
+      case 2:
+        let r = Number(prompt("Introduce un número para sacar su raíz:"));
+        document.write("Resultado: " + Math.sqrt(r));
+        break;
+
+      case 3:
+        let n = Number(prompt("Introduce un número decimal y lo redondearemos:"));
+        document.write("Número redondeado: " + Math.round(n));
+        break;
+
+      case 4:
+        let angulo = Number(prompt("Introduce un ángulo entre 0º y 360º:"));
+
+        if (angulo >= 0 && angulo <= 360) {
+          let rad = angulo * Math.PI / 180;
+          let seno = Math.sin(rad);
+          let coseno = Math.cos(rad);
+          let tangente = Math.tan(rad);
+
+          document.write("Para el ángulo " + angulo + "º:<br>");
+          document.write("Seno: " + seno.toFixed(4) + "<br>");
+          document.write("Coseno: " + coseno.toFixed(4) + "<br>");
+
+          if (Math.abs(coseno) < 1e-10) {
+            document.write("Tangente: indefinida<br>");
+          } else {
+            document.write("Tangente: " + tangente.toFixed(4) + "<br>");
+          }
+        } else {
+          document.write("Ángulo fuera de rango (0º-360º).");
+        }
+        break;
+
+      default:
+        document.write("Opción no válida.");
+        break;
+    }
+    </script>
+</body>
+</html>

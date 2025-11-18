@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  let numeros = [];
+
+  for (let i = 0; i < 20; i++) {
+    numeros.push(Math.floor(Math.random() * 101));
+  }
+
+  document.write("<h3>Array original:</h3>");
+  document.write(numeros.join(", ") + "<br><br>");
+
+  let sinDuplicados = [...new Set(numeros)];
+
+  for (let i = 0; i < sinDuplicados.length - 1; i++) {
+    for (let j = 0; j < sinDuplicados.length - i - 1; j++) {
+      if (sinDuplicados[j] > sinDuplicados[j + 1]) {
+        let temp = sinDuplicados[j];
+        sinDuplicados[j] = sinDuplicados[j + 1];
+        sinDuplicados[j + 1] = temp;
+      }
+    }
+  }
+
+  document.write("<h3>Array ordenado (sin duplicados):</h3>");
+  document.write(sinDuplicados.join(", "));
+</script>
+
+</body>
+</html>

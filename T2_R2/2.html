@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="time"></p>
+    <script>
+        let sec= new Date().getSeconds();
+        let minutes= new Date().getMinutes();
+        let hours=new Date().getHours();
+
+        const contador = setInterval(() => {
+            sec++;
+            if (sec >= 60) {
+                sec = 0;
+                minutes++;
+                if (minutes >= 60) {
+                    minutes = 0;
+                    hours++
+                    if (hours >= 24) {
+                        hours = 0;
+                    }
+                }
+            }
+
+            document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + sec; 
+        }, 1000);   
+    </script>
+</body>
+</html>

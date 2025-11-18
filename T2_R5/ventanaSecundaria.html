@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo"></p>
+    <script>
+        function recibeMensaje(texto) {
+            var objeto = document.getElementById("parrafo");
+            objeto.innerHTML = texto;
+            ventana.document.write(objeto.textContent);
+        }
+        function name(params) {
+            
+        }
+        let ventana;
+        function abrir() {
+            ventana= window.open("", "_blank", "width=400, height=600");
+            ventana.document.write("<button onclick='window.close()'>Cerrar</button><br>")
+        }
+        function cerrarse() {
+            ventana.window.close();
+        }
+    </script>
+    <button onclick="abrir()">Abrir ventana</button>
+    <button onclick="cerrarse()">Cerrar ventana secundaria</button>
+    <button onclick="recibeMensaje('Hola Mundo')">Envía un mensaje a la ventana secundaria</button>
+</body>
+</html>

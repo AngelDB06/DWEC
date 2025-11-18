@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numeros = [];
+
+        for (let i = 0; i < 20; i++) {
+            numeros.push(Math.floor(Math.random() * 101));
+        }
+
+        document.write("Array generado:", numeros.join(", "),"<br>");
+
+        let valorMinimo = Math.min(...numeros);
+        let valorMaximo = Math.max(...numeros);
+        let suma = numeros.reduce((acum, num) => acum + num, 0);
+        let valorMedio = suma / numeros.length;
+
+        document.write("Valor mínimo:", valorMinimo,"<br>");
+        document.write("Valor máximo:", valorMaximo,"<br>");
+        document.write("Valor medio:", valorMedio);
+
+    </script>
+</body>
+
+</html>

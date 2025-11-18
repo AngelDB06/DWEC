@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let actual = new Date();
+
+    let horas = actual.getHours();
+    let minutos = actual.getMinutes();
+    let segundos = actual.getSeconds();
+
+    if (horas < 10) horas = "0" + horas;
+    if (minutos < 10) minutos = "0" + minutos;
+    if (segundos < 10) segundos = "0" + segundos;
+
+    document.write(horas, ":", minutos, ":", segundos, "<br>");
+
+    document.write("Son las ", horas, "h y ", minutos, "m");
+  </script>
+</body>
+</html>

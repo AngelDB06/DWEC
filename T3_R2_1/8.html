@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  let entrada = prompt("Introduce varios nombres separados por comas (por ejemplo: Ana, Luis, Marta, Pedro)");
+
+  if (!entrada) {
+    document.write("No se ha introducido ningún nombre.");
+  } else {
+    let nombres = entrada.split(",");
+
+    for (let i = 0; i < nombres.length; i++) {
+      nombres[i] = nombres[i].trim();
+    }
+
+    nombres.sort();
+
+    document.write("<h3>Nombres introducidos:</h3>");
+    document.write(entrada + "<br><br>");
+
+    document.write("<h3>Nombres ordenados:</h3>");
+    document.write(nombres.join(", "));
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var texto = prompt("Introduce una cadena de texto:");
+
+        if (!texto) {
+            alert("No se introdujo ningún texto.");
+        } else {
+            var palabras = texto.trim().split(/\s+/);
+
+            var numPalabras = palabras.length;
+
+            var primeraPalabra = palabras[0];
+            var ultimaPalabra = palabras[palabras.length - 1];
+
+            var inverso = palabras.slice(); 
+            inverso.reverse();
+
+            var ordenAZ = palabras.slice(); 
+            ordenAZ.sort(function (a, b) {
+                return a.localeCompare(b);
+            });
+
+            var ordenZA = palabras.slice();
+            ordenZA.sort(function (a, b) {
+                return b.localeCompare(a);
+            });
+
+            var nuevaVentana = window.open("", "", "width=600,height=400,scrollbars=yes");
+            nuevaVentana.document.write("<p><strong>Número de palabras:</strong> " + numPalabras + "</p>");
+            nuevaVentana.document.write("<p><strong>Primera palabra:</strong> " + primeraPalabra + "</p>");
+            nuevaVentana.document.write("<p><strong>Última palabra:</strong> " + ultimaPalabra + "</p>");
+            nuevaVentana.document.write("<p><strong>Palabras en orden inverso:</strong> " + inverso.join(", ") + "</p>");
+            nuevaVentana.document.write("<p><strong>Palabras ordenadas de la A a la Z:</strong> " + ordenAZ.join(", ") + "</p>");
+            nuevaVentana.document.write("<p><strong>Palabras ordenadas de la Z a la A:</strong> " + ordenZA.join(", ") + "</p>");
+        }
+    </script>
+
+</body>
+
+</html>

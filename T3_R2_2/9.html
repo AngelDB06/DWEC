@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let frecuencias = new Array(13).fill(0);
+
+    function lanzarDado() {
+      return Math.floor(Math.random() * 6) + 1;
+    }
+
+    for (let i = 0; i < 36000; i++) {
+      let dado1 = lanzarDado();
+      let dado2 = lanzarDado();
+      let suma = dado1 + dado2;
+      frecuencias[suma]++;
+    }
+
+    document.write("<table border='1'>")
+    for (let i = 2; i <= 12; i++) {
+        document.write("<tr>")
+        document.write("<td>suma " + i +"</td>")
+        document.write("<td>",frecuencias[i]," veces</td>")
+        document.write("</tr>")
+    }
+    documen.write("</table>")
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let clase = prompt("1. First(1-5)\n2.Turista(6-10)");
+
+        let asiento;
+        let nombre;
+        let ventana;
+
+        if (clase==1) {
+            nombre = prompt("Introduce tu nombre: ")
+            asiento = prompt("Elige asiento:\n 1-2-3-4-5")
+            ventana = window.open("", "_blank", "width=400, height=400");
+            ventana.document.write(`Nombre: ${nombre}<br>Asiento: ${asiento}<br>Clase: First`)    
+        } else if(clase==2){
+            nombre = prompt("Introduce tu nombre: ")
+            asiento = prompt("Elige asiento:\n 6-7-8-9-10")
+            ventana = window.open("", "_blank", "width=400, height=400");
+            ventana.document.write(`Nombre: ${nombre}<br>Asiento: ${asiento}<br>Clase: Turista`)  
+        } else {
+            document.write("Introduzca una clase válida.")
+        }
+    </script>
+</body>
+</html>

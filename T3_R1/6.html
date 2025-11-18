@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function potenciaRecursiva(base, exponente) {
+            if (exponente === 0) return 1;
+            if (exponente < 0) return 1 / potenciaRecursiva(base, -exponente);
+            return base * potenciaRecursiva(base, exponente - 1);
+        }
+
+        const base = parseFloat(prompt("Introduce la base:"));
+        const exponente = parseInt(prompt("Introduce el exponente:"));
+
+        document.write(potenciaRecursiva(base, exponente))
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const alumnos = [
+            "Angel Garcia, 20, 6, 7, 10",
+            "Enrique Fernández, 21, 8, 9, 7",
+            "Mario Moreno, 19, 7, 8, 10"
+        ]
+        
+        let nestudiante = prompt("Introduce el número de estudiante: ");
+
+        let ntrimestre = prompt("Introduce el número de trimestre: ");
+
+        let trimestre = [];
+        let nombre = [];
+
+        function mostrarNota(nestudiante, ntrimestre) {
+            trimestre = alumnos[nestudiante-1].split(", ").slice(2);
+            return trimestre[ntrimestre-1];
+        }
+        function mostrarEstudiante(nestudiante){
+            nombre = alumnos[nestudiante-1].split(", ");
+            return nombre[0]
+        }
+        document.write(mostrarEstudiante(nestudiante), ` Trimestre ${ntrimestre}: ` , mostrarNota(nestudiante, ntrimestre));
+    </script>
+</body>
+</html>

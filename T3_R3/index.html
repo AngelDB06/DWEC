@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejemplo de modAuxiliar.js</title>
+</head>
+<body>
+  <h1>Pruebas de funciones de modAuxiliar.js</h1>
+  <pre id="output"></pre>
+
+  <script type="module">
+    import {
+      filterNumbersGreaterThan,
+      toHackerSpeak,
+      getFileExtension,
+      flatArray,
+      removeDuplicates,
+      countLetter,
+      removeWords
+    } from './modAuxiliar.js';
+
+    const output = document.getElementById('output');
+
+    const tests = [
+      ['filterNumbersGreaterThan([3, 8, 12, 1, 7, 4], 7)', filterNumbersGreaterThan([3, 8, 12, 1, 7, 4], 7)],
+      ['toHackerSpeak("I\'m a hacker now")', toHackerSpeak("I'm a hacker now")],
+      ['getFileExtension("imagen.jpg")', getFileExtension("imagen.jpg")],
+      ['flatArray([[1, 5, 4], [3, 10], [2, 5]])', flatArray([[1, 5, 4], [3, 10], [2, 5]])],
+      ['removeDuplicates([4, 5, 10, 4, 10, 2])', removeDuplicates([4, 5, 10, 4, 10, 2])],
+      ['countLetter("a", "javascript")', countLetter("a", "javascript")],
+      ['removeWords("This is a really bad test", ["really", "bad"])', removeWords("This is a really bad test", ["really", "bad"])]
+    ];
+
+    tests.forEach(([desc, res]) => {
+      output.textContent += `${desc} → ${Array.isArray(res) ? res.join(', ') : res}\n`;
+    });
+  </script>
+</body>
+</html>
+

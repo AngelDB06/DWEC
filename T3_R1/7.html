@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function factorial(n) {
+        let res = 1;
+        for (let i = 2; i <= n; i++) res *= i;
+        return res;
+    }
+
+    let numero = parseInt(prompt("Introduce un número para calcular los factoriales hasta él:"), 10);
+
+    if (isNaN(numero) || numero < 1) {
+        document.body.innerHTML = "<p>Por favor, introduce un número válido mayor o igual a 1.</p>";
+    } else {
+        let tabla = "<table>";
+        tabla += "<tr><th>Número</th><th>Factorial</th></tr>";
+        for (let i = 1; i <= numero; i++) {
+        tabla += `<tr><td>${i}</td><td>${factorial(i)}</td></tr>`;
+        }
+        tabla += "</table>";
+        document.write(tabla);
+    }
+    </script>
+</body>
+</html>

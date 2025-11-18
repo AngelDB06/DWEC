@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let frase = prompt("Introduce una frase: ");
+        let a=0;
+        let e=0;
+        let i=0;
+        let o=0;
+        let u=0;
+        for (let j = 0; j < frase.length; j++) {
+            if (frase[j]=="a") {
+                a+=1;
+            }
+            if (frase[j]=="e") {
+                e+=1;
+            }
+            if (frase[j]=="i") {
+                i+=1;
+            }
+            if (frase[j]=="o") {
+                o+=1;
+            }
+            if (frase[j]=="u") {
+                u+=1;
+            }
+        }
+        document.write("A: ", a, " veces<br>");
+        document.write("E: ", e, " veces<br>");
+        document.write("I: ", i, " veces<br>");
+        document.write("O: ", o, " veces<br>");
+        document.write("U: ", u, " veces<br>");
+    </script>
+</body>
+</html>
