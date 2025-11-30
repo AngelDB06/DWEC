@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Juego del 15</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    #board {
+      width: 320px;
+      height: 320px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 5px;
+    }
+    .tile {
+      background: #3498db;
+      color: white;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .empty {
+      background: #ccc;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <div id="board"></div>
+  <script src="main.js"></script>
+</body>
+</html>
