@@ -16,6 +16,18 @@ function cargarDatos() {
     }
 }
 
+function cargarDatosV2() {
+    fetch ("https://fakestoreapi.com/products")
+        .then(res => res.json())
+        .then(json => {
+            db=json
+            mostrarProductos(document.getElementById("productos"), db);
+            filtrarProductos();
+        })
+        .catch(error => "Error: ", error);
+        
+}
+
 const mostrarProductos = (padre, arr) => {
     const fragmento = document.createDocumentFragment();
     padre.innerHTML = "";
@@ -45,6 +57,7 @@ const mostrarProductos = (padre, arr) => {
         button.type = "button";
 
         button.addEventListener("click", () => mostrarInfo(div, element.id));
+        div.addEventListener("click", () => mostrarInfoPorProducto(padre, element.id));
 
         [id, title, price, image, button].forEach(item => ul.appendChild(item));
 
@@ -85,11 +98,19 @@ const  mostrarInfo=(contenedor, id) => {
     }
 }
 
+const mostrarInfoPorProducto=(padre, id) => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(res => res.json())
+        .then(json => {
+            mostrarProductos(padre, [json]);
+        })
+        .catch(error => console.log("Error: ", error))
+}
 
 const main = () => {
-    cargarDatos();
-    mostrarProductos(document.getElementById("productos"), db);
-    filtrarProductos();
+    document.getElementById("btnCargar").addEventListener("click", () => {
+        cargarDatosV2();
+    })
 };
 
 document.addEventListener("DOMContentLoaded", main);

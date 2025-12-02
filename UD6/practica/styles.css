@@ -1,0 +1,99 @@
+/* styles.css */
+
+/* Reset básico y fuente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Contenedor de los caracteres */
+#caracteres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Cada card */
+#caracteres div {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#caracteres div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Imagen del personaje */
+#caracteres img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Contenedor del card destacado en mostrarInfo */
+#cardDestacado, .detalle {
+    background-color: #ffeaa7; /* amarillo suave para destacar */
+    padding: 25px;
+    margin: 20px auto; /* separa del resto y centra */
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    max-width: 600px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#cardDestacado:hover, .detalle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Imagen del card destacado */
+#cardDestacado img, .detalle img {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+/* Textos del card destacado */
+#cardDestacado p, .detalle p {
+    font-size: 1.1em;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+/* Botón opcional dentro del card */
+#cardDestacado button, .detalle button {
+    padding: 8px 16px;
+    margin-top: 10px;
+    border: none;
+    background-color: #fd79a8; /* rosa llamativo */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#cardDestacado button:hover, .detalle button:hover {
+    background-color: #e84393;
+}

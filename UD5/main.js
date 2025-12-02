@@ -1,52 +1,122 @@
-const informacionNodo = (nodo) => {
-    console.log("Información del Nodo: ", nodo);
-    console.log("Tipo de nodo: ", nodo.nodeType);
-    console.log("Nombre del nodo: ", nodo.nodeName);
-    console.log("Valor del nodo: ", nodo.nodeValue);
-    console.log("Número de hijos: ", nodo.childNodes.length);
-    console.log("Contenido del nodo: ", nodo.textContent);
-    
+import { get } from "./httpCliente.js";
+let db = [];
 
-    console.log("Primer hijo: ", nodo.firstChild);
-    console.log("Último hijo: ", nodo.lastChild);
-    console.log("Nodo padre: ", nodo.parentNode);
-    console.log("Nodo siguiente: ", nodo.nextSibling);
-    console.log("Nodo anterior: ", nodo.previousSibling);
-    
-    console.log("Primer hijo (elemento): ", nodo.firstElementChild);
-    console.log("Último hijo (elemento): ", nodo.lastElementChild);
-    console.log("Nodo siguiente (elemento): ", nodo.nextElementSibling);
-    console.log("Nodo anterior: (Elemento)", nodo.previousElementSibling);
+function cargarDatos() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://fakestoreapi.com/products", true);
+    xhttp.send();
+
+    xhttp.onload = () => {
+    if (xhttp.status === 200) {
+        db = JSON.parse(xhttp.responseText);
+        mostrarProductos(document.getElementById("productos"), db);
+        filtrarProductos();
+    } else {
+        alert("Error al cargar los datos");
+    }
+    }
 }
 
-
-/**
- * Muestra el nodo y todos sus hijos
- * @param {*} nodo 
- */
-const recorreNodo =(nodo) => {
-    console.log("Recorriendo nodo: ", nodo);
-    // nodo.childNodes.forEach(child => {
-    //     console.log(child);
-    // });
-    
-    for (let hijo of nodo.children)
-        console.log(hijo)
+function cargarDatosV2() {
+    fetch ("https://fakestoreapi.com/products")
+        .then(res => res.json())
+        .then(json => {
+            db=json
+            mostrarProductos(document.getElementById("productos"), db);
+            filtrarProductos();
+        })
+        .catch(error => "Error: ", error);
+        
 }
 
-/**
- * Recorre un nodo junto con todo su subarbol
- * @param {*} nodo 
- */
-const recorreNodoRecursivo = (nodo) =>{
-    console.log(nodo);
-    for (let hijo of nodo.children)
-        recorreNodoRecursivo(hijo);
+const mostrarProductos = (padre, arr) => {
+    const fragmento = document.createDocumentFragment();
+    padre.innerHTML = "";
+
+    arr.forEach(element => {
+        const div = document.createElement("div");
+        div.style.border = "1px solid black";
+        div.id = `div${element.id}`;
+
+        const ul = document.createElement("ul");
+        ul.style.listStyle = "none";
+
+        const id = document.createElement("li");
+        id.textContent = "ID: " + element.id;
+
+        const title = document.createElement("li");
+        title.textContent = "Artículo: " + element.title;
+
+        const price = document.createElement("li");
+        price.textContent = element.price + "€";
+
+        const image = document.createElement("img");
+        image.src = element.image;
+
+        const button = document.createElement("button");
+        button.textContent = "Ver Info";
+        button.type = "button";
+
+        button.addEventListener("click", () => mostrarInfo(div, element.id));
+        div.addEventListener("click", () => mostrarInfoPorProducto(padre, element.id));
+
+        [id, title, price, image, button].forEach(item => ul.appendChild(item));
+
+        div.appendChild(ul);
+        fragmento.appendChild(div);
+    });
+
+    padre.appendChild(fragmento);
+};
+
+const filtrarProductos = () => {
+    const select = document.getElementById("opt");
+
+    select.addEventListener("change", () => {
+        if (select.value === "all") {
+            mostrarProductos(document.getElementById("productos"), db);
+        } else {
+            const filtrado = db.filter(e => e.category === select.value);
+            mostrarProductos(document.getElementById("productos"), filtrado);
+        }
+    });
+};
+
+const  mostrarInfo=(contenedor, id) => {
+    let producto = db.find(p => p.id === id);
+
+    if (producto) {
+        let info = contenedor.querySelector(".info");
+        if (info) contenedor.removeChild(info);
+
+        let div = document.createElement("div");
+        div.className = "info";
+
+        div.innerHTML = "<p>Categoría: " + producto.category + "</p>" +
+                        "<p>Descripción: " + producto.description + "</p>";
+
+        contenedor.appendChild(div);
+    }
 }
+
+const mostrarInfoPorProducto=(padre, id) => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(res => res.json())
+        .then(json => {
+            mostrarProductos(padre, [json]);
+        })
+        .catch(error => console.log("Error: ", error))
+}
+
+const cargarDatosV3= (url) => {
+    get(url)
+    .then(json => {mostrarProductos(document.getElementById("productos"),json); filtrarProductos();});
+}
+
 const main = () => {
-    // informacionNodo(document.getElementById("lista"));
-    // recorreNodo(document.getElementById("lista"));
-    recorreNodoRecursivo(document.getElementById("lista"));
-}
+    document.getElementById("btnCargar").addEventListener("click", () => {
+        cargarDatosV3("https://fakestoreapi.com/products");
+    })
+};
 
 document.addEventListener("DOMContentLoaded", main);
