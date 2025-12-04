@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.header {
+    color: #4285f4;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.game-card {
+    background-color: #82d2e5;
+    /* Light blue background from image */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-weight: 300;
+    font-size: 1em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.timer {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 3/4;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.card-front {
+    background-color: #f0f0f0;
+    /* Card back color (visible initially) */
+    color: transparent;
+}
+
+/* Pattern for card back */
+.card-front::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid white;
+    opacity: 0.5;
+}
+
+.card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+}

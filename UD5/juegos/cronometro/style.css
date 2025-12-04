@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.header {
+    color: #4285f4;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stopwatch-card {
+    background-color: #ffa500; /* Orange background */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.timer-display {
+    font-size: 3em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    min-width: 100px;
+}
+
+button:hover {
+    background-color: white;
+    color: #ffa500;
+}
+
+button:active {
+    transform: translateY(1px);
+}

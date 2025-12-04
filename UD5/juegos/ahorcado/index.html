@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JavaScript Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-card">
+            <h1>HANGMAN</h1>
+            <h2>VANILLA JAVASCRIPT HANGMAN GAME</h2>
+
+            <p class="instructions">Use the alphabet below to guess the word, or click hint to get a clue.</p>
+
+            <div id="buttons" class="alphabet-buttons">
+            </div>
+
+            <p id="categoryName" class="category-text">The Chosen Category Is Cities</p>
+
+            <div id="hold" class="word-display">
+            </div>
+
+            <p id="mylives" class="lives-text">You have 10 lives</p>
+
+            <div class="controls">
+                <button id="hint">Hint</button>
+                <button id="reset">Play Again</button>
+            </div>
+            <p id="clue" class="clue-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

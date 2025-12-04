@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.header {
+    color: #4285f4;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.game-card {
+    background-color: #a4d133;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.instructions {
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.alphabet-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alphabet-btn {
+    background-color: white;
+    color: #a4d133;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.alphabet-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.alphabet-btn:disabled {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: default;
+}
+
+.category-text {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.word-display {
+    margin-bottom: 30px;
+    font-size: 2em;
+    letter-spacing: 5px;
+    font-family: monospace;
+    min-height: 40px;
+}
+
+.lives-text {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button#hint,
+button#reset {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button#hint:hover,
+button#reset:hover {
+    background-color: white;
+    color: #a4d133;
+}
+
+.clue-text {
+    margin-top: 15px;
+    font-style: italic;
+}
