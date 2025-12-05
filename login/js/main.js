@@ -26,8 +26,6 @@ const guardarDatos = (objeto) => {
 const validarCredenciales = () => {
     const usuario = document.getElementById("usuario").value;
         const password = document.getElementById("password").value;
-        console.log(usuario);
-        console.log(password);
         if (usuario!="" || password != "") {
             const encontrado = db.find(item => item.name === usuario && item.email === password );
             console.log(encontrado);
