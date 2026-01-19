@@ -1,4 +1,4 @@
-const cargarStudents = (usuario, callback) => {
+const idStudent = (usuario, callback) => {
     fetch("http://localhost:3000/students")
     .then(res => res.json())
     .then(json => {
@@ -54,7 +54,7 @@ const subirEnrollment = (objeto) => {
 
 }
 
-const mostrarCursos = (json) => {
+const mostrarCursos = (json) => {     
     json.forEach(course => {
         crearOpcion(course);
     });
@@ -78,7 +78,7 @@ const matricular = (json) => {
     const usuario = localStorage.getItem("usuario");
     const course = document.getElementById("courses").value;
     console.log(course);
-    cargarStudents(usuario, (ids)=>{
+    idStudent(usuario, (ids)=>{
         if (!ids) {
             alert("Usuario no encontrado")
         } else {

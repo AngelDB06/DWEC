@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <p>Filtrar:</p>
+    <label for="filtrar">Atributo</label>
+    <select name="filtrar" id="filtrar">
+        <option value="price">Price</option>
+        <option value="rate">Rate</option>
+        <option value="count">Count</option>
+    </select>
+    <label for="valor">Valor</label>
+    <input type="number" id="valor" placeholder="Valor">
+    <button id="enviarfiltro">Filtrar</button>
+
+    <div id="carrito"></div>
+    <hr>
+    <div id="container"></div>
+</body>
+</html>

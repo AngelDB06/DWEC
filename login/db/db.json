@@ -141,7 +141,7 @@
       "completed": true
     },
     {
-      "id": 6,
+      "id": "6",
       "studentId": "2",
       "courseId": "1",
       "enrollmentDate": "2025-12-5",
@@ -149,7 +149,7 @@
       "completed": false
     },
     {
-      "id": 7,
+      "id": "7",
       "studentId": "2",
       "courseId": "3",
       "enrollmentDate": "2025-12-5",
@@ -157,10 +157,34 @@
       "completed": false
     },
     {
-      "id": 8,
+      "id": "8",
       "studentId": "8",
       "courseId": "2",
       "enrollmentDate": "2025-12-5",
+      "progress": 0,
+      "completed": false
+    },
+    {
+      "id": "9",
+      "studentId": "2",
+      "courseId": "4",
+      "enrollmentDate": "2025-12-5",
+      "progress": 0,
+      "completed": false
+    },
+    {
+      "id": 10,
+      "studentId": "8",
+      "courseId": "2",
+      "enrollmentDate": "2025-12-9",
+      "progress": 0,
+      "completed": false
+    },
+    {
+      "id": 11,
+      "studentId": "8",
+      "courseId": "1",
+      "enrollmentDate": "2025-12-9",
       "progress": 0,
       "completed": false
     }
